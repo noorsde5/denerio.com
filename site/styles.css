@@ -91,6 +91,17 @@ img {
   border-radius: 8px;
   background: linear-gradient(135deg, var(--color-primary), var(--color-accent-signal));
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
+  }
 }
 
 .nav-links {
@@ -267,6 +278,19 @@ h1 {
 
 .hero-stat-live {
   color: var(--color-accent-signal);
+  animation: statPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes statPulse {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 0.85;
+    text-shadow: 0 0 12px rgba(34, 211, 238, 0.45);
+  }
 }
 
 .hero-stat-label {
@@ -321,6 +345,7 @@ h1 {
 .hero-flow-dot--green {
   background: #10b981;
   opacity: 0.85;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .hero-flow-toolbar-title {
@@ -375,38 +400,71 @@ h1 {
   stroke-linecap: round;
   fill: none;
   stroke-dasharray: 6 8;
+  stroke-dashoffset: 0;
   animation: flowDash 1.2s linear infinite;
-  opacity: 0.85;
+  opacity: 0.9;
+  vector-effect: non-scaling-stroke;
 }
 
 .flow-path--source {
-  stroke: rgba(148, 163, 184, 0.45);
+  stroke: rgba(148, 163, 184, 0.55);
   stroke-width: 1.5;
   stroke-dasharray: 4 8;
   animation-duration: 1.5s;
 }
 
 .flow-path--lake {
-  stroke: rgba(100, 116, 139, 0.55);
+  stroke: rgba(100, 116, 139, 0.65);
   stroke-dasharray: 4 6;
   animation-duration: 1.8s;
 }
 
 .flow-path--secondary {
-  stroke: rgba(245, 158, 11, 0.45);
+  stroke: rgba(245, 158, 11, 0.55);
   stroke-dasharray: 5 9;
   animation-duration: 1.6s;
   fill: none;
 }
 
 @keyframes flowDash {
+  from {
+    stroke-dashoffset: 0;
+  }
   to {
     stroke-dashoffset: -28;
   }
 }
 
+.flow-particles {
+  pointer-events: none;
+  filter: url(#particleGlow);
+}
+
 .flow-particle {
-  filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.8));
+  opacity: 0.95;
+  animation: particleGlow 1.8s ease-in-out infinite;
+}
+
+.flow-particle--source {
+  animation-duration: 2.2s;
+}
+
+.flow-particle--lake {
+  animation-duration: 2.4s;
+}
+
+.flow-particle--secondary {
+  animation-duration: 2.8s;
+}
+
+@keyframes particleGlow {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .flow-node-box {
@@ -467,22 +525,40 @@ h1 {
 .flow-node--active .flow-node-box {
   fill: rgba(59, 130, 246, 0.12);
   stroke: rgba(59, 130, 246, 0.55);
-  animation: nodePulse 3s ease-in-out infinite;
+  animation: nodePulseActive 3s ease-in-out infinite;
 }
 
 .flow-node--alert .flow-node-box {
   fill: rgba(245, 158, 11, 0.12);
   stroke: rgba(245, 158, 11, 0.55);
-  animation: nodePulse 2.5s ease-in-out infinite 0.5s;
+  animation: nodePulseAlert 2.5s ease-in-out infinite 0.5s;
 }
 
-@keyframes nodePulse {
+@keyframes nodePulseActive {
   0%,
   100% {
-    filter: none;
+    fill: rgba(59, 130, 246, 0.12);
+    stroke: rgba(59, 130, 246, 0.55);
+    stroke-width: 1;
   }
   50% {
-    filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.35));
+    fill: rgba(59, 130, 246, 0.22);
+    stroke: rgba(34, 211, 238, 0.85);
+    stroke-width: 2;
+  }
+}
+
+@keyframes nodePulseAlert {
+  0%,
+  100% {
+    fill: rgba(245, 158, 11, 0.12);
+    stroke: rgba(245, 158, 11, 0.55);
+    stroke-width: 1;
+  }
+  50% {
+    fill: rgba(245, 158, 11, 0.24);
+    stroke: rgba(251, 191, 36, 0.9);
+    stroke-width: 2;
   }
 }
 
@@ -508,33 +584,44 @@ h1 {
   font-size: 0.75rem;
   opacity: 0;
   transform: translateX(12px);
-  animation: feedSlideIn 0.6s ease forwards;
+  animation: feedCycle 10s ease-in-out infinite;
 }
 
 .flow-feed-item--1 {
-  animation-delay: 0.2s;
+  animation-delay: 0s;
 }
 
 .flow-feed-item--2 {
-  animation-delay: 0.7s;
+  animation-delay: 0.4s;
 }
 
 .flow-feed-item--3 {
-  animation-delay: 1.2s;
+  animation-delay: 0.8s;
 }
 
 .flow-feed-item--4 {
-  animation-delay: 1.7s;
+  animation-delay: 1.2s;
 }
 
 .flow-feed-item--5 {
-  animation-delay: 2.2s;
+  animation-delay: 1.6s;
 }
 
-@keyframes feedSlideIn {
-  to {
+@keyframes feedCycle {
+  0%,
+  8% {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  12%,
+  72% {
     opacity: 1;
     transform: translateX(0);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateX(-8px);
   }
 }
 
@@ -593,6 +680,9 @@ h1 {
   .flow-feed-item,
   .hero-badge-dot,
   .hero-flow-status-pulse,
+  .hero-flow-dot--green,
+  .hero-stat-live,
+  .logo-mark,
   .hero::before {
     animation: none;
   }

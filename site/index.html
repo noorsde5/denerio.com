@@ -89,55 +89,31 @@
                       <stop offset="50%" stop-color="#22d3ee" stop-opacity="1" />
                       <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.25" />
                     </linearGradient>
+                    <filter id="particleGlow" x="-100%" y="-100%" width="300%" height="300%">
+                      <feGaussianBlur stdDeviation="1.5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
                   </defs>
 
                   <!-- sources → ingest -->
-                  <path class="flow-path flow-path--source" d="M 52 48 L 68 68" />
-                  <path class="flow-path flow-path--source" d="M 124 48 L 78 62" />
-                  <path class="flow-path flow-path--source" d="M 196 48 L 88 68" />
+                  <path class="flow-path flow-path--source" d="M 52 48 L 68 70" />
+                  <path class="flow-path flow-path--source" d="M 124 48 L 78 64" />
+                  <path class="flow-path flow-path--source" d="M 196 48 L 96 70" />
 
-                  <!-- main pipeline -->
-                  <path class="flow-path" d="M 112 98 L 128 98" />
-                  <path class="flow-path" d="M 216 98 L 232 98" />
-                  <path class="flow-path" d="M 320 98 L 336 98" />
-                  <path class="flow-path" d="M 424 98 L 440 98" />
+                  <!-- main pipeline (connectors above node boxes) -->
+                  <path class="flow-path" d="M 112 71 L 128 71" />
+                  <path class="flow-path" d="M 216 71 L 232 71" />
+                  <path class="flow-path" d="M 320 71 L 336 71" />
+                  <path class="flow-path" d="M 424 71 L 440 71" />
 
                   <!-- ingest → data lake -->
                   <path class="flow-path flow-path--lake" d="M 68 120 L 68 148" />
 
                   <!-- graph → act shortcut (evidence path) -->
-                  <path class="flow-path flow-path--secondary" d="M 276 120 C 276 138, 484 138, 484 120" />
-
-                  <!-- particles: sources -->
-                  <circle class="flow-particle" r="3" fill="#94a3b8">
-                    <animateMotion dur="2.2s" repeatCount="indefinite" path="M 52 48 L 68 68" />
-                  </circle>
-                  <circle class="flow-particle" r="3" fill="#22d3ee">
-                    <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.4s" path="M 124 48 L 78 62" />
-                  </circle>
-                  <circle class="flow-particle" r="3" fill="#94a3b8">
-                    <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s" path="M 196 48 L 88 68" />
-                  </circle>
-
-                  <!-- particles: main chain -->
-                  <circle class="flow-particle" r="4" fill="#22d3ee">
-                    <animateMotion dur="1.8s" repeatCount="indefinite" path="M 112 98 L 128 98" />
-                  </circle>
-                  <circle class="flow-particle" r="4" fill="#3b82f6">
-                    <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.35s" path="M 216 98 L 232 98" />
-                  </circle>
-                  <circle class="flow-particle" r="4" fill="#22d3ee">
-                    <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.7s" path="M 320 98 L 336 98" />
-                  </circle>
-                  <circle class="flow-particle" r="4" fill="#10b981">
-                    <animateMotion dur="1.8s" repeatCount="indefinite" begin="1.05s" path="M 424 98 L 440 98" />
-                  </circle>
-                  <circle class="flow-particle" r="3" fill="#64748b">
-                    <animateMotion dur="2s" repeatCount="indefinite" begin="0.2s" path="M 68 120 L 68 148" />
-                  </circle>
-                  <circle class="flow-particle" r="3" fill="#f59e0b">
-                    <animateMotion dur="3.2s" repeatCount="indefinite" begin="1.4s" path="M 276 120 C 276 138, 484 138, 484 120" />
-                  </circle>
+                  <path class="flow-path flow-path--secondary" d="M 320 120 C 320 136, 484 136, 484 120" />
 
                   <!-- source chips -->
                   <g class="flow-source" transform="translate(24, 20)">
@@ -192,6 +168,37 @@
                   <text x="252" y="68" class="flow-node-hint">Ontology &amp; links</text>
                   <text x="352" y="68" class="flow-node-hint">Search &amp; AI</text>
                   <text x="460" y="68" class="flow-node-hint">Alerts &amp; workflow</text>
+
+                  <!-- particles on top so they render above nodes -->
+                  <g class="flow-particles" aria-hidden="true">
+                    <circle class="flow-particle flow-particle--source" r="3" fill="#94a3b8">
+                      <animateMotion dur="2.2s" repeatCount="indefinite" calcMode="linear" path="M 52 48 L 68 70" />
+                    </circle>
+                    <circle class="flow-particle flow-particle--source" r="3" fill="#22d3ee">
+                      <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.4s" calcMode="linear" path="M 124 48 L 78 64" />
+                    </circle>
+                    <circle class="flow-particle flow-particle--source" r="3" fill="#94a3b8">
+                      <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s" calcMode="linear" path="M 196 48 L 96 70" />
+                    </circle>
+                    <circle class="flow-particle" r="4" fill="#22d3ee">
+                      <animateMotion dur="1.6s" repeatCount="indefinite" calcMode="linear" path="M 112 71 L 128 71" />
+                    </circle>
+                    <circle class="flow-particle" r="4" fill="#3b82f6">
+                      <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.3s" calcMode="linear" path="M 216 71 L 232 71" />
+                    </circle>
+                    <circle class="flow-particle" r="4" fill="#22d3ee">
+                      <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.6s" calcMode="linear" path="M 320 71 L 336 71" />
+                    </circle>
+                    <circle class="flow-particle" r="4" fill="#10b981">
+                      <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.9s" calcMode="linear" path="M 424 71 L 440 71" />
+                    </circle>
+                    <circle class="flow-particle flow-particle--lake" r="3" fill="#64748b">
+                      <animateMotion dur="2s" repeatCount="indefinite" begin="0.2s" calcMode="linear" path="M 68 120 L 68 148" />
+                    </circle>
+                    <circle class="flow-particle flow-particle--secondary" r="3" fill="#f59e0b">
+                      <animateMotion dur="3s" repeatCount="indefinite" begin="1.2s" calcMode="linear" path="M 320 120 C 320 136, 484 136, 484 120" />
+                    </circle>
+                  </g>
                 </svg>
 
                 <ul class="flow-feed" aria-label="Pipeline activity">
