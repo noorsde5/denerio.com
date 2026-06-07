@@ -1,0 +1,37 @@
+# Platform code — tracked in private repo only, not in this public site repo
+/backend/
+/frontend/
+/document/
+/docker-compose.yml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.venv/
+venv/
+ENV/
+
+# Node
+node_modules/
+dist/
+.next/
+
+# Env / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Local data
+data/
+storage/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
