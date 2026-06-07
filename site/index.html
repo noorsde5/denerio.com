@@ -26,22 +26,15 @@
         <nav class="nav-links" aria-label="Main">
           <a href="#features">Product</a>
           <a href="#architecture">Architecture</a>
-          <a href="https://github.com/noorsde5/denerio.com" target="_blank" rel="noopener">GitHub</a>
         </nav>
-        <a
-          class="btn btn-primary"
-          href="https://github.com/noorsde5/denerio.com"
-          target="_blank"
-          rel="noopener"
-          >View on GitHub</a
-        >
+        <a class="btn btn-primary" href="mailto:hello@denerio.com">Contact us</a>
       </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="container hero-grid">
-          <div>
+          <div class="hero-copy">
             <div class="hero-badge">
               <span class="hero-badge-dot" aria-hidden="true"></span>
               Decision intelligence platform
@@ -51,35 +44,183 @@
               Ingest CSV, PDF, JSON, IoT, and more. Validate and unify. Build
               knowledge graphs. Search, forecast, and decide — with evidence.
             </p>
+
+            <div class="hero-stats" aria-label="Platform metrics">
+              <div class="hero-stat">
+                <span class="hero-stat-value">12.4k</span>
+                <span class="hero-stat-label">Events / day</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-value">847</span>
+                <span class="hero-stat-label">Entities linked</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-value hero-stat-live">23</span>
+                <span class="hero-stat-label">Active alerts</span>
+              </div>
+            </div>
+
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://github.com/noorsde5/denerio.com" target="_blank" rel="noopener"
-                >Get started</a
-              >
+              <a class="btn btn-primary" href="mailto:hello@denerio.com">Request a demo</a>
               <a class="btn btn-secondary" href="#architecture">View architecture</a>
             </div>
           </div>
 
-          <div class="pipeline" aria-label="Data pipeline">
-            <div class="pipeline-title">Data flow</div>
-            <div class="pipeline-steps">
-              <div class="pipeline-step">
-                <span class="pipeline-step-icon" style="background: rgba(100,116,139,0.2); color: #94a3b8">1</span>
-                Sources — CSV, PDF, IoT, API
+          <div class="hero-flow" aria-label="Denerio platform data flow">
+            <div class="hero-flow-chrome">
+              <div class="hero-flow-toolbar">
+                <span class="hero-flow-dot hero-flow-dot--red"></span>
+                <span class="hero-flow-dot hero-flow-dot--amber"></span>
+                <span class="hero-flow-dot hero-flow-dot--green"></span>
+                <span class="hero-flow-toolbar-title">Denerio · command center</span>
+                <span class="hero-flow-status">
+                  <span class="hero-flow-status-pulse"></span>
+                  Live pipeline
+                </span>
               </div>
-              <div class="pipeline-arrow">↓</div>
-              <div class="pipeline-step">
-                <span class="pipeline-step-icon" style="background: var(--color-primary-muted); color: var(--color-primary)">2</span>
-                Ingestion &amp; validation
-              </div>
-              <div class="pipeline-arrow">↓</div>
-              <div class="pipeline-step">
-                <span class="pipeline-step-icon" style="background: var(--color-accent-signal-muted); color: var(--color-accent-signal)">3</span>
-                Knowledge graph &amp; search
-              </div>
-              <div class="pipeline-arrow">↓</div>
-              <div class="pipeline-step">
-                <span class="pipeline-step-icon" style="background: rgba(16,185,129,0.15); color: #10b981">4</span>
-                Alerts, insights &amp; actions
+
+              <div class="hero-flow-body">
+                <p class="hero-flow-caption">Sources → data lake → graph intelligence → action</p>
+
+                <svg class="hero-flow-svg" viewBox="0 0 560 248" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25" />
+                      <stop offset="50%" stop-color="#22d3ee" stop-opacity="1" />
+                      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.25" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- sources → ingest -->
+                  <path class="flow-path flow-path--source" d="M 52 48 L 68 68" />
+                  <path class="flow-path flow-path--source" d="M 124 48 L 78 62" />
+                  <path class="flow-path flow-path--source" d="M 196 48 L 88 68" />
+
+                  <!-- main pipeline -->
+                  <path class="flow-path" d="M 112 98 L 128 98" />
+                  <path class="flow-path" d="M 216 98 L 232 98" />
+                  <path class="flow-path" d="M 320 98 L 336 98" />
+                  <path class="flow-path" d="M 424 98 L 440 98" />
+
+                  <!-- ingest → data lake -->
+                  <path class="flow-path flow-path--lake" d="M 68 120 L 68 148" />
+
+                  <!-- graph → act shortcut (evidence path) -->
+                  <path class="flow-path flow-path--secondary" d="M 276 120 C 276 138, 484 138, 484 120" />
+
+                  <!-- particles: sources -->
+                  <circle class="flow-particle" r="3" fill="#94a3b8">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" path="M 52 48 L 68 68" />
+                  </circle>
+                  <circle class="flow-particle" r="3" fill="#22d3ee">
+                    <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.4s" path="M 124 48 L 78 62" />
+                  </circle>
+                  <circle class="flow-particle" r="3" fill="#94a3b8">
+                    <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s" path="M 196 48 L 88 68" />
+                  </circle>
+
+                  <!-- particles: main chain -->
+                  <circle class="flow-particle" r="4" fill="#22d3ee">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" path="M 112 98 L 128 98" />
+                  </circle>
+                  <circle class="flow-particle" r="4" fill="#3b82f6">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.35s" path="M 216 98 L 232 98" />
+                  </circle>
+                  <circle class="flow-particle" r="4" fill="#22d3ee">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.7s" path="M 320 98 L 336 98" />
+                  </circle>
+                  <circle class="flow-particle" r="4" fill="#10b981">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" begin="1.05s" path="M 424 98 L 440 98" />
+                  </circle>
+                  <circle class="flow-particle" r="3" fill="#64748b">
+                    <animateMotion dur="2s" repeatCount="indefinite" begin="0.2s" path="M 68 120 L 68 148" />
+                  </circle>
+                  <circle class="flow-particle" r="3" fill="#f59e0b">
+                    <animateMotion dur="3.2s" repeatCount="indefinite" begin="1.4s" path="M 276 120 C 276 138, 484 138, 484 120" />
+                  </circle>
+
+                  <!-- source chips -->
+                  <g class="flow-source" transform="translate(24, 20)">
+                    <rect width="56" height="28" rx="6" class="flow-source-box" />
+                    <text x="28" y="18" class="flow-source-label">CSV</text>
+                  </g>
+                  <g class="flow-source" transform="translate(96, 20)">
+                    <rect width="56" height="28" rx="6" class="flow-source-box" />
+                    <text x="28" y="18" class="flow-source-label">IoT</text>
+                  </g>
+                  <g class="flow-source" transform="translate(168, 20)">
+                    <rect width="56" height="28" rx="6" class="flow-source-box" />
+                    <text x="28" y="18" class="flow-source-label">PDF</text>
+                  </g>
+
+                  <!-- 5 platform layers (matches Architecture section) -->
+                  <g class="flow-node flow-node--active" transform="translate(24, 76)">
+                    <rect width="88" height="44" rx="8" class="flow-node-box" />
+                    <text x="44" y="19" class="flow-node-num">01</text>
+                    <text x="44" y="34" class="flow-node-label">Ingest</text>
+                  </g>
+                  <g class="flow-node" transform="translate(128, 76)">
+                    <rect width="88" height="44" rx="8" class="flow-node-box" />
+                    <text x="44" y="19" class="flow-node-num">02</text>
+                    <text x="44" y="34" class="flow-node-label">Validate</text>
+                  </g>
+                  <g class="flow-node flow-node--active" transform="translate(232, 76)">
+                    <rect width="88" height="44" rx="8" class="flow-node-box" />
+                    <text x="44" y="19" class="flow-node-num">03</text>
+                    <text x="44" y="34" class="flow-node-label">Graph</text>
+                  </g>
+                  <g class="flow-node" transform="translate(336, 76)">
+                    <rect width="88" height="44" rx="8" class="flow-node-box" />
+                    <text x="44" y="19" class="flow-node-num">04</text>
+                    <text x="44" y="34" class="flow-node-label">Analyze</text>
+                  </g>
+                  <g class="flow-node flow-node--alert" transform="translate(440, 76)">
+                    <rect width="88" height="44" rx="8" class="flow-node-box" />
+                    <text x="44" y="19" class="flow-node-num">05</text>
+                    <text x="44" y="34" class="flow-node-label">Act</text>
+                  </g>
+
+                  <!-- data lake -->
+                  <g class="flow-node flow-node--lake" transform="translate(28, 148)">
+                    <rect width="80" height="36" rx="8" class="flow-node-box" />
+                    <text x="40" y="22" class="flow-node-label">Data lake</text>
+                  </g>
+
+                  <!-- layer hints -->
+                  <text x="44" y="68" class="flow-node-hint">Sources &amp; streams</text>
+                  <text x="148" y="68" class="flow-node-hint">Clean &amp; resolve</text>
+                  <text x="252" y="68" class="flow-node-hint">Ontology &amp; links</text>
+                  <text x="352" y="68" class="flow-node-hint">Search &amp; AI</text>
+                  <text x="460" y="68" class="flow-node-hint">Alerts &amp; workflow</text>
+                </svg>
+
+                <ul class="flow-feed" aria-label="Pipeline activity">
+                  <li class="flow-feed-item flow-feed-item--1">
+                    <span class="flow-feed-type flow-feed-type--ingest">01 INGEST</span>
+                    <span class="flow-feed-text">history_2025.csv → raw/</span>
+                    <span class="flow-feed-time">now</span>
+                  </li>
+                  <li class="flow-feed-item flow-feed-item--2">
+                    <span class="flow-feed-type flow-feed-type--validate">02 VALIDATE</span>
+                    <span class="flow-feed-text">Badge #4821 → Person</span>
+                    <span class="flow-feed-time">1s</span>
+                  </li>
+                  <li class="flow-feed-item flow-feed-item--3">
+                    <span class="flow-feed-type flow-feed-type--graph">03 GRAPH</span>
+                    <span class="flow-feed-text">ENTERED Zone B · 14:02</span>
+                    <span class="flow-feed-time">3s</span>
+                  </li>
+                  <li class="flow-feed-item flow-feed-item--4">
+                    <span class="flow-feed-type flow-feed-type--analyze">04 ANALYZE</span>
+                    <span class="flow-feed-text">Graph + vector match</span>
+                    <span class="flow-feed-time">6s</span>
+                  </li>
+                  <li class="flow-feed-item flow-feed-item--5">
+                    <span class="flow-feed-type flow-feed-type--act">05 ACT</span>
+                    <span class="flow-feed-text">Case opened · Zone violation</span>
+                    <span class="flow-feed-time">9s</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -186,18 +327,16 @@ ORDER BY e.timestamp</pre>
         </div>
       </section>
 
-      <section class="cta">
+      <section class="cta" id="contact">
         <div class="container">
           <div class="cta-box">
             <h2>Ready to build on Denerio?</h2>
             <p>
-              Phase 1 is live on GitHub. Clone the repo, explore the architecture, and contribute.
+              Talk to us about your data sources, security workflows, and deployment needs. We will help you plan the right rollout.
             </p>
             <div class="cta-actions">
-              <a class="btn btn-primary" href="https://github.com/noorsde5/denerio.com" target="_blank" rel="noopener"
-                >Open GitHub repo</a
-              >
-              <a class="btn btn-secondary" href="mailto:hello@denerio.com">Contact team</a>
+              <a class="btn btn-primary" href="mailto:hello@denerio.com">Contact team</a>
+              <a class="btn btn-secondary" href="#architecture">View architecture</a>
             </div>
           </div>
         </div>
@@ -212,9 +351,9 @@ ORDER BY e.timestamp</pre>
         </div>
         <nav class="footer-links" aria-label="Footer">
           <a href="https://denerio.com">denerio.com</a>
-          <a href="https://github.com/noorsde5/denerio.com" target="_blank" rel="noopener">GitHub</a>
           <a href="#features">Product</a>
           <a href="#architecture">Architecture</a>
+          <a href="mailto:hello@denerio.com">Contact</a>
         </nav>
         <p>&copy; 2026 Denerio. All rights reserved.</p>
       </div>
