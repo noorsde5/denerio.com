@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260607" />
+    <link rel="stylesheet" href="styles.css?v=20260607b" />
     <style>
       /* Inline SVG styles — external CSS cannot reliably reference SVG defs (gradients/filters) */
       .hero-flow-svg .flow-path {
@@ -417,6 +417,83 @@
               <h3>Act</h3>
               <p>Alerts &amp; workflow</p>
             </div>
+          </div>
+
+          <div class="layer-foundation" id="layer-1">
+            <div class="layer-foundation-header">
+              <p class="layer-foundation-label">Foundation</p>
+              <h3 class="layer-foundation-title">Layer 1 — Data source &amp; data lake</h3>
+              <p class="layer-foundation-desc">
+                Register, preserve, validate, secure, curate, and prepare data before it enters ingestion pipelines.
+                Steps 01–02 above map to this foundation layer.
+              </p>
+            </div>
+
+            <div class="layer-sources">
+              <span class="layer-source-chip">APIs</span>
+              <span class="layer-source-chip">Databases</span>
+              <span class="layer-source-chip">Files</span>
+              <span class="layer-source-chip">Documents</span>
+              <span class="layer-source-chip">Logs</span>
+              <span class="layer-source-chip">Human input</span>
+            </div>
+
+            <ol class="layer-pipeline" aria-label="Layer 1 processing pipeline">
+              <li class="layer-stage">
+                <span class="layer-stage-num">1</span>
+                <strong>Source registry</strong>
+                <span>Owner, trust level, SLA, access method</span>
+              </li>
+              <li class="layer-stage">
+                <span class="layer-stage-num">2</span>
+                <strong>Raw data lake</strong>
+                <span>Original evidence preserved — CSV, PDF, API, scans</span>
+              </li>
+              <li class="layer-stage">
+                <span class="layer-stage-num">3</span>
+                <strong>Validate &amp; repair</strong>
+                <span>Format, completeness, OCR — reject or quarantine bad data</span>
+              </li>
+              <li class="layer-stage">
+                <span class="layer-stage-num">4</span>
+                <strong>Dedup &amp; secure</strong>
+                <span>Entity resolution, PII detection, encryption &amp; masking</span>
+              </li>
+              <li class="layer-stage">
+                <span class="layer-stage-num">5</span>
+                <strong>Standardize</strong>
+                <span>Normalize dates, units, schema — quality &amp; trust scores</span>
+              </li>
+              <li class="layer-stage layer-stage--output">
+                <span class="layer-stage-num">→</span>
+                <strong>Graph-ready staging</strong>
+                <span>Entities + relationships extracted — hand-off to Layer 2</span>
+              </li>
+            </ol>
+
+            <div class="layer-zones">
+              <div class="layer-zone">
+                <span class="layer-zone-path">raw/</span>
+                <span class="layer-zone-name">Raw lake</span>
+                <span class="layer-zone-desc">Unmodified originals</span>
+              </div>
+              <div class="layer-zone-arrow" aria-hidden="true">→</div>
+              <div class="layer-zone">
+                <span class="layer-zone-path">cleaned/</span>
+                <span class="layer-zone-name">Standardized</span>
+                <span class="layer-zone-desc">Validated &amp; normalized</span>
+              </div>
+              <div class="layer-zone-arrow" aria-hidden="true">→</div>
+              <div class="layer-zone layer-zone--ready">
+                <span class="layer-zone-path">processed/</span>
+                <span class="layer-zone-name">Graph-ready</span>
+                <span class="layer-zone-desc">Entities &amp; links staged</span>
+              </div>
+            </div>
+
+            <p class="layer-handoff">
+              <strong>Layer 2</strong> ingestion pipelines load staged data into Postgres, Neo4j, and Qdrant — then layers 03–05 power graph intelligence, search &amp; AI, and alerts.
+            </p>
           </div>
 
           <div class="code-block">
