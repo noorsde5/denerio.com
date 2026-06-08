@@ -686,6 +686,375 @@ h2 {
   line-height: 1.5;
 }
 
+/* How it works */
+.section-how {
+  border-block: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+}
+
+.how-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  counter-reset: how;
+}
+
+@media (min-width: 768px) {
+  .how-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .how-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.how-step {
+  padding: 1.5rem;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.how-step-num {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent-signal);
+  margin-bottom: 0.75rem;
+}
+
+.how-step h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.how-step p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+/* Use cases */
+.section-alt {
+  background: linear-gradient(180deg, var(--color-bg-base) 0%, rgba(11, 15, 20, 0) 100%);
+}
+
+.usecase-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .usecase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.usecase-card {
+  padding: 1.5rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.15s;
+}
+
+.usecase-card:hover {
+  border-color: var(--color-border-strong);
+}
+
+.usecase-tag {
+  margin: 0 0 0.65rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-signal);
+}
+
+.usecase-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.usecase-question {
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--color-text-primary);
+  background: rgba(34, 211, 238, 0.06);
+  border-left: 2px solid var(--color-accent-signal);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  line-height: 1.45;
+}
+
+.usecase-card > p:last-child {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Ontology */
+.ontology-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 960px) {
+  .ontology-layout {
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: auto auto;
+  }
+
+  .ontology-sources {
+    grid-column: 1 / -1;
+  }
+}
+
+.ontology-objects,
+.ontology-relations,
+.ontology-sources {
+  padding: 1.5rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.ontology-subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.ontology-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ontology-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.ontology-icon {
+  color: var(--color-primary);
+  font-size: 0.625rem;
+}
+
+.ontology-rel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ontology-rel-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.ontology-rel-list code {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 0.2rem 0.4rem;
+  color: var(--color-accent-signal);
+  background: var(--color-accent-signal-muted);
+  border-radius: 4px;
+}
+
+.source-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+@media (min-width: 640px) {
+  .source-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .source-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.source-item {
+  padding: 0.75rem 0.9rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  line-height: 1.45;
+}
+
+.source-item strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Governance */
+.section-governance {
+  border-block: 1px solid var(--color-border);
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59, 130, 246, 0.08), transparent),
+    var(--color-bg-elevated);
+}
+
+.governance-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .governance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.governance-card {
+  padding: 1.5rem;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.governance-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.governance-card p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+.governance-card code {
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  color: var(--color-accent-signal);
+}
+
+/* Rollout phases */
+.rollout-phases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .rollout-phases {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .rollout-phases {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.rollout-phase {
+  padding: 1.5rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.rollout-phase--active {
+  border-color: rgba(59, 130, 246, 0.45);
+  background: rgba(59, 130, 246, 0.06);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.12) inset;
+}
+
+.rollout-phase-label {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.rollout-phase--active .rollout-phase-label {
+  color: var(--color-primary);
+}
+
+.rollout-phase h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.rollout-phase > p {
+  margin: 0 0 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.rollout-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.rollout-tags li {
+  padding: 0.2rem 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.rollout-phase--active .rollout-tags li {
+  color: var(--color-primary);
+  border-color: rgba(59, 130, 246, 0.25);
+  background: rgba(59, 130, 246, 0.08);
+}
+
 /* Architecture (light section) */
 .section-light {
   background: var(--color-light-bg);

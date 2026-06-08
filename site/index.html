@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260607b" />
+    <link rel="stylesheet" href="styles.css?v=20260608" />
     <style>
       /* Inline SVG styles — external CSS cannot reliably reference SVG defs (gradients/filters) */
       .hero-flow-svg .flow-path {
@@ -120,6 +120,7 @@
         </a>
         <nav class="nav-links" aria-label="Main">
           <a href="#features">Product</a>
+          <a href="#use-cases">Use cases</a>
           <a href="#architecture">Architecture</a>
         </nav>
         <a class="btn btn-primary" href="mailto:hello@denerio.com">Contact us</a>
@@ -338,6 +339,42 @@
         </div>
       </section>
 
+      <section class="section section-how" id="how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">How it works</p>
+            <h2>From raw inputs to decisions — in four stages</h2>
+            <p class="section-desc">
+              Denerio follows the same integration-first model used by enterprise intelligence platforms:
+              trust the data, model the world, then analyze and act.
+            </p>
+          </div>
+
+          <ol class="how-steps">
+            <li class="how-step">
+              <span class="how-step-num">01</span>
+              <h3>Connect &amp; ingest</h3>
+              <p>APIs, databases, files, documents, IoT streams, and human reports land in a governed data lake with source registry and lineage.</p>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">02</span>
+              <h3>Validate &amp; unify</h3>
+              <p>Schema checks, repair, deduplication, and PII controls. Bad data is quarantined — never silently dropped.</p>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">03</span>
+              <h3>Graph &amp; search</h3>
+              <p>Entities and relationships become a temporal knowledge graph. Hybrid keyword, vector, and graph search power investigations.</p>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">04</span>
+              <h3>Detect &amp; act</h3>
+              <p>Rules, risk scoring, and AI-assisted reasoning feed alerts, cases, and audit-ready outcomes.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
       <section class="section" id="features">
         <div class="container">
           <div class="section-header">
@@ -376,6 +413,124 @@
               <p>
                 Rule-based detection, risk scoring, cases, and outcomes. Close the loop from insight to action with full audit trails.
               </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="use-cases">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Use cases</p>
+            <h2>Built for security and operations teams</h2>
+            <p class="section-desc">
+              Start with physical security and facility intelligence. The same platform extends to supply chain, operations, and risk domains.
+            </p>
+          </div>
+
+          <div class="usecase-grid">
+            <article class="usecase-card">
+              <p class="usecase-tag">Investigation</p>
+              <h3>Timeline reconstruction</h3>
+              <p class="usecase-question">Who was in Zone B between 2:00 and 2:30 PM when the alarm fired?</p>
+              <p>Combine badge scans, CCTV metadata, and incident reports into one temporal view with full provenance.</p>
+            </article>
+            <article class="usecase-card">
+              <p class="usecase-tag">Link analysis</p>
+              <h3>Person &amp; vehicle linkage</h3>
+              <p class="usecase-question">Which vehicles entered Gate 3 before this person accessed a restricted area?</p>
+              <p>Graph relationships across access control, ANPR, and IoT sensors — not disconnected spreadsheets.</p>
+            </article>
+            <article class="usecase-card">
+              <p class="usecase-tag">Operations</p>
+              <h3>Alert triage &amp; cases</h3>
+              <p class="usecase-question">Is this tailgating, loitering, or a false positive?</p>
+              <p>Rule-based detection with evidence attached. Open cases, assign analysts, and close the loop with audit trails.</p>
+            </article>
+            <article class="usecase-card">
+              <p class="usecase-tag">Intelligence</p>
+              <h3>Multi-source fusion</h3>
+              <p class="usecase-question">What patterns emerge across 12 months of history and live feeds?</p>
+              <p>Ingest archived CSV dumps, news, and live streams into one pipeline — raw evidence preserved, insights layered on top.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ontology">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Ontology</p>
+            <h2>A shared language for your data</h2>
+            <p class="section-desc">
+              Every source maps to canonical objects and relationships — the foundation for graph search, rules, and AI.
+            </p>
+          </div>
+
+          <div class="ontology-layout">
+            <div class="ontology-objects">
+              <h3 class="ontology-subtitle">Core objects</h3>
+              <ul class="ontology-list">
+                <li><span class="ontology-icon">◉</span> Person</li>
+                <li><span class="ontology-icon">◉</span> Vehicle</li>
+                <li><span class="ontology-icon">◉</span> Zone</li>
+                <li><span class="ontology-icon">◉</span> Event</li>
+                <li><span class="ontology-icon">◉</span> Sensor</li>
+                <li><span class="ontology-icon">◉</span> Alert &amp; Case</li>
+              </ul>
+            </div>
+            <div class="ontology-relations">
+              <h3 class="ontology-subtitle">Temporal relationships</h3>
+              <ul class="ontology-rel-list">
+                <li><code>ENTERED</code> <span>Person → Zone</span></li>
+                <li><code>EXITED</code> <span>Person → Zone</span></li>
+                <li><code>PASSED_THROUGH</code> <span>Vehicle → Gate</span></li>
+                <li><code>TRIGGERED</code> <span>Sensor → Event</span></li>
+                <li><code>ASSOCIATED_WITH</code> <span>Person → Vehicle</span></li>
+                <li><code>REPORTED_BY</code> <span>Event → Person</span></li>
+              </ul>
+            </div>
+            <div class="ontology-sources">
+              <h3 class="ontology-subtitle">What connects in</h3>
+              <div class="source-grid">
+                <div class="source-item"><strong>IoT</strong> People counters, motion, door status</div>
+                <div class="source-item"><strong>Access</strong> Badge scans, zone occupancy</div>
+                <div class="source-item"><strong>ANPR</strong> License plates, vehicle metadata</div>
+                <div class="source-item"><strong>Files</strong> CSV, Excel, JSON, SQL dumps</div>
+                <div class="source-item"><strong>Documents</strong> PDF reports, scans, images</div>
+                <div class="source-item"><strong>Streams</strong> MQTT, webhooks, REST APIs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-governance" id="governance">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Governance</p>
+            <h2>Evidence-first by design</h2>
+            <p class="section-desc">
+              Intelligence platforms fail without trust. Denerio keeps provenance and access control at the core — not bolted on later.
+            </p>
+          </div>
+
+          <div class="governance-grid">
+            <article class="governance-card">
+              <h3>Immutable raw store</h3>
+              <p>Original files and API responses land in <code>raw/</code> unchanged. Every downstream record links back to source evidence.</p>
+            </article>
+            <article class="governance-card">
+              <h3>Quarantine, not silence</h3>
+              <p>Validation failures get error codes and owner notification. Data is rejected or repaired — never dropped without a trace.</p>
+            </article>
+            <article class="governance-card">
+              <h3>Lineage &amp; audit</h3>
+              <p>Track who ingested what, when, and how it was transformed. Support compliance and post-incident review.</p>
+            </article>
+            <article class="governance-card">
+              <h3>Sensitivity controls</h3>
+              <p>PII and confidential fields detected early. Encryption, masking, and role-based access before data spreads.</p>
             </article>
           </div>
         </div>
@@ -506,6 +661,61 @@ ORDER BY e.timestamp</pre>
         </div>
       </section>
 
+      <section class="section" id="rollout">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Rollout</p>
+            <h2>Deployed in phases, not all at once</h2>
+            <p class="section-desc">
+              Start with a working data spine — ingest, validate, query. Add graph, search, and AI as your sources and use cases mature.
+            </p>
+          </div>
+
+          <ol class="rollout-phases">
+            <li class="rollout-phase rollout-phase--active">
+              <span class="rollout-phase-label">Phase 1 · Now</span>
+              <h3>Event backbone</h3>
+              <p>Ingest API and CSV → validate → Postgres → operator dashboard. Prove the core loop before adding complexity.</p>
+              <ul class="rollout-tags">
+                <li>FastAPI</li>
+                <li>Postgres</li>
+                <li>React dashboard</li>
+              </ul>
+            </li>
+            <li class="rollout-phase">
+              <span class="rollout-phase-label">Phase 2</span>
+              <h3>Data lake &amp; graph</h3>
+              <p>Raw evidence in object storage. Entity enrichment and Neo4j for link analysis and timeline reconstruction.</p>
+              <ul class="rollout-tags">
+                <li>MinIO / S3</li>
+                <li>Neo4j</li>
+                <li>Entity resolution</li>
+              </ul>
+            </li>
+            <li class="rollout-phase">
+              <span class="rollout-phase-label">Phase 3</span>
+              <h3>Search &amp; AI</h3>
+              <p>Vector embeddings, hybrid retrieval, and Hugging Face inference through a secure gateway — cloud or on-prem.</p>
+              <ul class="rollout-tags">
+                <li>Qdrant</li>
+                <li>HF gateway</li>
+                <li>RAG</li>
+              </ul>
+            </li>
+            <li class="rollout-phase">
+              <span class="rollout-phase-label">Phase 4</span>
+              <h3>Act &amp; automate</h3>
+              <p>Real-time rules, MQTT streams, cases, forecasting, and investigation copilot with full audit trails.</p>
+              <ul class="rollout-tags">
+                <li>MQTT</li>
+                <li>Alerts</li>
+                <li>Workflows</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
       <section class="cta" id="contact">
         <div class="container">
           <div class="cta-box">
@@ -531,7 +741,10 @@ ORDER BY e.timestamp</pre>
         <nav class="footer-links" aria-label="Footer">
           <a href="https://denerio.com">denerio.com</a>
           <a href="#features">Product</a>
+          <a href="#use-cases">Use cases</a>
+          <a href="#ontology">Ontology</a>
           <a href="#architecture">Architecture</a>
+          <a href="#rollout">Rollout</a>
           <a href="mailto:hello@denerio.com">Contact</a>
         </nav>
         <p>&copy; 2026 Denerio. All rights reserved.</p>
