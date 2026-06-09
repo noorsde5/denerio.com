@@ -94,9 +94,8 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  isolation: isolate;
-  background: linear-gradient(135deg, #ffffff, #e2e8f0);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-signal));
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
   animation: logoGlow 3s ease-in-out infinite;
 }
 
@@ -104,18 +103,15 @@ img {
   width: 26px;
   height: 26px;
   object-fit: contain;
-  mix-blend-mode: normal;
-  filter: none;
-  opacity: 1;
 }
 
 @keyframes logoGlow {
   0%,
   100% {
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.15);
   }
   50% {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.22);
+    box-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
   }
 }
 
