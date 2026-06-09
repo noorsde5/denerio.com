@@ -94,25 +94,14 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-signal));
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
-  animation: logoGlow 3s ease-in-out infinite;
+  background: #000;
+  border: 1px solid var(--color-border-strong);
 }
 
 .logo-mark {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
-}
-
-@keyframes logoGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 16px rgba(34, 211, 238, 0.15);
-  }
-  50% {
-    box-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
-  }
 }
 
 .nav-links {
@@ -571,7 +560,6 @@ h1 {
   .hero-flow-status-pulse,
   .hero-flow-dot--green,
   .hero-stat-live,
-  .logo-mark-wrap,
   .hero::before,
   .hero-flow-svg .flow-path,
   .hero-flow-svg .flow-node--active .flow-node-box,
