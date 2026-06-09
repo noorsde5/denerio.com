@@ -85,15 +85,25 @@ img {
   letter-spacing: -0.02em;
 }
 
-.logo-mark {
+.logo-mark-wrap {
   width: 32px;
   height: 32px;
   border-radius: 8px;
   flex-shrink: 0;
-  display: block;
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-signal));
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
   animation: logoGlow 3s ease-in-out infinite;
+}
+
+.logo-mark {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 @keyframes logoGlow {
@@ -562,7 +572,7 @@ h1 {
   .hero-flow-status-pulse,
   .hero-flow-dot--green,
   .hero-stat-live,
-  .logo-mark,
+  .logo-mark-wrap,
   .hero::before,
   .hero-flow-svg .flow-path,
   .hero-flow-svg .flow-node--active .flow-node-box,

@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260608" />
+    <link rel="stylesheet" href="styles.css?v=20260609" />
     <style>
       /* Inline SVG styles — external CSS cannot reliably reference SVG defs (gradients/filters) */
       .hero-flow-svg .flow-path {
@@ -117,7 +117,9 @@
     <header class="nav">
       <div class="container nav-inner">
         <a href="#" class="logo">
-          <img src="icon.svg" alt="" class="logo-mark" width="32" height="32" />
+          <span class="logo-mark-wrap" aria-hidden="true">
+            <img src="icon.svg" alt="" class="logo-mark" width="24" height="24" />
+          </span>
           Denerio
         </a>
         <nav class="nav-links" aria-label="Main">
@@ -737,7 +739,9 @@ ORDER BY e.timestamp</pre>
     <footer class="footer">
       <div class="container footer-inner">
         <div class="logo">
-          <img src="icon.svg" alt="" class="logo-mark" width="32" height="32" />
+          <span class="logo-mark-wrap" aria-hidden="true">
+            <img src="icon.svg" alt="" class="logo-mark" width="24" height="24" />
+          </span>
           Denerio
         </div>
         <nav class="footer-links" aria-label="Footer">
