@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="180" viewBox="0 0 180 180">
+  <defs>
+    <clipPath id="round">
+      <rect width="180" height="180" rx="45" ry="45" />
+    </clipPath>
+  </defs>
+  <rect width="180" height="180" rx="45" ry="45" fill="#000000" />
+  <image href="icon.svg" width="180" height="180" clip-path="url(#round)" preserveAspectRatio="xMidYMid meet" />
+</svg>

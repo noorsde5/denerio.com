@@ -90,28 +90,28 @@ img {
   height: 32px;
   border-radius: 8px;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.2);
+  overflow: hidden;
+  background: #000;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.2));
   animation: logoGlow 3s ease-in-out infinite;
 }
 
 .logo-mark {
   width: 32px;
   height: 32px;
-  object-fit: contain;
+  display: block;
+  object-fit: cover;
   border-radius: 8px;
+  background: #000;
 }
 
 @keyframes logoGlow {
   0%,
   100% {
-    box-shadow: 0 0 12px rgba(34, 211, 238, 0.15);
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.15));
   }
   50% {
-    box-shadow: 0 0 24px rgba(34, 211, 238, 0.4);
+    filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.4));
   }
 }
 
