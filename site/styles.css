@@ -94,25 +94,24 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-signal));
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+  background: linear-gradient(135deg, #ffffff, #e2e8f0);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.12);
   animation: logoGlow 3s ease-in-out infinite;
 }
 
 .logo-mark {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
-  mix-blend-mode: screen;
 }
 
 @keyframes logoGlow {
   0%,
   100% {
-    box-shadow: 0 0 16px rgba(34, 211, 238, 0.15);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
   }
   50% {
-    box-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.22);
   }
 }
 
