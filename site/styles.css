@@ -93,15 +93,25 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background: #000;
-  border: 1px solid var(--color-border-strong);
+  background: transparent;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.2);
+  animation: logoGlow 3s ease-in-out infinite;
 }
 
 .logo-mark {
   width: 32px;
   height: 32px;
   object-fit: contain;
+}
+
+@keyframes logoGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(34, 211, 238, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.4);
+  }
 }
 
 .nav-links {
@@ -560,6 +570,7 @@ h1 {
   .hero-flow-status-pulse,
   .hero-flow-dot--green,
   .hero-stat-live,
+  .logo-mark-wrap,
   .hero::before,
   .hero-flow-svg .flow-path,
   .hero-flow-svg .flow-node--active .flow-node-box,
