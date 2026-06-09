@@ -89,7 +89,9 @@ img {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-signal));
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
   animation: logoGlow 3s ease-in-out infinite;
 }
